@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="imio.webspellchecker">
+
+    <browser:page
+      name="wsc_init.js"
+      for="*"
+      class=".jsview.JsView"
+      permission="zope.Public"
+      />
+
+    <browser:page
+      name="webspellchecker-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class="imio.webspellchecker.browser.controlpanel.WebspellcheckerSettings"
+      permission="cmf.ManagePortal"
+      />
+
+</configure>

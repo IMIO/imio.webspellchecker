@@ -6,12 +6,13 @@
 
 
     <configlet
-        title="Webspellchecker settings"
+        title="Webspellchecker"
         action_id="imio.webspellchecker.settings"
         appId="imio.webspellchecker"
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/@@webspellchecker-controlpanel"
+        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/book-alphabet.png"
         visible="True"
         i18n:attributes="title">
             <permission>Manage portal</permission>

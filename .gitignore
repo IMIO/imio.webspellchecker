@@ -39,3 +39,5 @@ reports/
 !.travis.yml
 !src/imio
 pyvenv.cfg
+.idea
+share

@@ -52,7 +52,7 @@ setup(
     extras_require={
         'test': [
             'plone.app.testing',
-            'plone.testing>=5.0.0'
+            'plone.app.robotframework[debug]',
         ],
     },
     entry_points="""

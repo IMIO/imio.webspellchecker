@@ -16,39 +16,39 @@ msgstr ""
 
 #: ../browser/controlpanel.py:39
 msgid "Automatic startup"
-msgstr ""
+msgstr "Démarrage automatique"
 
 #: ../browser/controlpanel.py:57
 msgid "Enable grammar"
-msgstr ""
+msgstr "Activer la correction de la grammaire"
 
 #: ../browser/controlpanel.py:58
 msgid "Enable grammar correction."
-msgstr ""
+msgstr "Activer la correction grammatical"
 
 #: ../browser/controlpanel.py:25
 msgid "Enable or disable Webspellchecker."
-msgstr ""
+msgstr "Activer ou désactiver Webspellchecker"
 
 #: ../browser/controlpanel.py:24
 msgid "Enabled"
-msgstr ""
+msgstr "Activer"
 
 #: ../browser/controlpanel.py:51
 msgid "Hide branding"
-msgstr ""
+msgstr "Cacher la marque Webspellchecker"
 
 #: ../browser/controlpanel.py:40
 msgid "If checked, Webspellchecker starts in the enabled state and starts processing available text for grammar, spelling, and style errors. If, for some reason, you do not want WProofreader to start checking text at once and allow your users to choose when to start, you have an option to start Webspellchecker in the disabled state."
-msgstr ""
+msgstr "Si coché, Webspellchecker va démarrer en mode 'actif' et va commencer à traiter le texte directement. Dans le cas contraire, il sera minimisé et l'utilisateur devra l'activer pour démarrer la correction."
 
 #: ../browser/controlpanel.py:31
 msgid "If checked, Webspellchecker will start when the editor is focused. Otherwise, it will be started for the entire page."
-msgstr ""
+msgstr "Si coché, Webspellchecker s'initialisera lorsque l'éditeur a le 'focus'. Sinon il s'initialisera pour tous les champs de la page directement."
 
 #: ../browser/controlpanel.py:30
 msgid "Initialize on focus"
-msgstr ""
+msgstr "Initialiser au focus"
 
 #: ../configure.zcml:33
 msgid "Installs the imio.webspellchecker add-on."
@@ -60,27 +60,27 @@ msgstr ""
 
 #: ../browser/controlpanel.py:86
 msgid "Service ID"
-msgstr ""
+msgstr "Service ID"
 
 #: ../browser/controlpanel.py:77
 msgid "Service host"
-msgstr ""
+msgstr "Service host"
 
 #: ../browser/controlpanel.py:83
 msgid "Service path"
-msgstr ""
+msgstr "Service path"
 
 #: ../browser/controlpanel.py:80
 msgid "Service port"
-msgstr ""
+msgstr "Service port"
 
 #: ../browser/controlpanel.py:70
 msgid "Service protocol"
-msgstr ""
+msgstr "Service protocol"
 
 #: ../browser/controlpanel.py:63
 msgid "Theme"
-msgstr ""
+msgstr "Thème"
 
 #: ../configure.zcml:42
 msgid "Uninstalls the imio.webspellchecker add-on."
@@ -88,11 +88,11 @@ msgstr ""
 
 #: ../browser/controlpanel.py:93
 msgid "Webspellchecker settings"
-msgstr ""
+msgstr "Paramètres de Webspellchecker"
 
 #: ../browser/controlpanel.py:94
 msgid "Webspellchecker settings control panel"
-msgstr ""
+msgstr "Contrôler les paramètres de Webspellchecker pour Plone."
 
 #: ../configure.zcml:33
 msgid "imio.webspellchecker"

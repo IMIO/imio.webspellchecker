@@ -10,6 +10,8 @@
   <include package="Products.CMFCore" file="permissions.zcml" />
   <include package=".browser" />
 
+  <include file="profiles.zcml" />
+
   <utility
     name="imio.webspellchecker.vocabularies.HttpProtocols"
     component=".vocabularies.WebspellcheckerHttpProtocolsVocabularyFactory"
@@ -21,29 +23,5 @@
     component=".vocabularies.WebspellcheckerThemesVocabularyFactory"
     provides="zope.schema.interfaces.IVocabularyFactory"
   />
-
-
-  <genericsetup:registerProfile
-      name="default"
-      title="imio.webspellchecker"
-      directory="profiles/default"
-      description="Installs the imio.webspellchecker add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="imio.webspellchecker (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the imio.webspellchecker add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
-
-  <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="imio.webspellchecker-hiddenprofiles"
-      />
 
 </configure>

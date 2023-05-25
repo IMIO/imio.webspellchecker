@@ -27,6 +27,7 @@ class WebspellcheckerThemesVocabulary(object):
                 SimpleTerm("default", "Default"),
                 SimpleTerm("gray", "Gray"),
                 SimpleTerm("dark", "Dark"),
+                SimpleTerm("plone", "Plone"),
                 SimpleTerm("custom", "Custom"),
             ]
         )

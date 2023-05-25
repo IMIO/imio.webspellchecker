@@ -2,7 +2,7 @@
 <object name="portal_controlpanel"
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="collective.documentgenerator"
-        purge="False">
+        purge="True">
 
 
     <configlet
@@ -12,7 +12,7 @@
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/@@webspellchecker-controlpanel"
-        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/book-alphabet.png"
+        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/p5-controlpanel-icon.png"
         visible="True"
         i18n:attributes="title">
             <permission>Manage portal</permission>

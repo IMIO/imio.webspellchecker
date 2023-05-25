@@ -1,3 +1,4 @@
+import json
 import os
 
 from Products.Five import BrowserView
@@ -13,32 +14,28 @@ class JsView(BrowserView):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IWebspellcheckerControlPanelSchema)
         if settings.enabled:
-            js_string = """
-                $.ajax({{
-                    type: 'GET',
-                    url: '{js_bundle_url}',
-                    dataType: 'script',
-                    cache: true
-                }});
-                window.WEBSPELLCHECKER_CONFIG = {{
-                    autoSearch:true,
-                    lang:'auto',
-                    theme:'{theme}',
-                    removeBranding: {hide_branding},
-                    serviceProtocol:'{service_protocol}',
-                    serviceHost:'{service_host}',
-                    servicePort:'{service_port}',
-                    servicePath:'{service_path}',
-                    localization:'{language}'
-                }};
-            """.format(
-                js_bundle_url=settings.js_bundle_url,
-                language=language,
-                theme=settings.theme,
-                hide_branding=str(settings.hide_branding).lower(),
-                service_protocol=settings.service_protocol,
-                service_host=settings.service_host,
-                service_port=settings.service_port,
-                service_path=settings.service_path,
+            js_string = "window.WEBSPELLCHECKER_CONFIG = {};".format(
+                json.dumps(self.get_settings())
             )
             return js_string
+
+    def get_settings(self):
+        """
+        @return: Python dictionary of settings
+        """
+
+        language = api.portal.get_current_language()
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IWebspellcheckerControlPanelSchema)
+
+        return {
+            "autoSearch": True,
+            "lang": 'auto',
+            "localization": language,
+            "theme": settings.theme,
+            "removeBranding": settings.hide_branding,
+            "serviceProtocol": settings.service_protocol,
+            "serviceHost": settings.service_host,
+            "servicePort": settings.service_port,
+            "servicePath": settings.service_path,
+        }

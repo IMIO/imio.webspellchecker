@@ -2,7 +2,6 @@
 <registry
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="imio.webspellchecker">
-  <records interface="imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema" />
   <records prefix="plone.bundles/webspellchecker-js"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="enabled">True</value>

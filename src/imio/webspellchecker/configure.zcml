@@ -35,6 +35,7 @@
       />
 
   <genericsetup:registerProfile
+      zcml:condition="not-have plone-5"
       name="default"
       title="imio.webspellchecker"
       directory="profiles/plone4"

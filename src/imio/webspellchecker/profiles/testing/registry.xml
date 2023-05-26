@@ -6,8 +6,8 @@
     <value key="enable_grammar">True</value>
     <value key="enabled">True</value>
     <value key="hide_branding">True</value>
-    <value key="js_bundle_url">https://wsc.imio-test.be/wscservice/wscbundle/wscbundle.js</value>
-    <value key="service_host">wsc.imio-test.be</value>
+    <value key="js_bundle_url">https://wsc.imio-app.be/wscservice/wscbundle/wscbundle.js</value>
+    <value key="service_host">wsc.imio-app.be</value>
     <value key="service_path">/wscservice/api/scripts/ssrv.cgi</value>
     <value key="service_port">443</value>
     <value key="service_protocol">https</value>

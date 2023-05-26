@@ -141,6 +141,7 @@
 }
 div.wsc-badge.wsc-theme-custom.wsc-badgewrapper__badge.wsc-badge--animationMove.wsc-badge--checking button.wsc-button.wsc-button--clear.wsc--focusable.wsc-badge__label-button.wsc-badge__button{
     background-image: url("/++resource++imio.webspellchecker/plone_spinner.svg") !important;
+    background-color: transparent !important;
 }
 .wsc-theme-custom .wsc-ie9 .wsc-badge--checking:not(.wsc-badge--small) .wsc-badge__label-button,
 .wsc-theme-custom .wsc-ie10 .wsc-badge--checking:not(.wsc-badge--small) .wsc-badge__label-button,
@@ -148,5 +149,6 @@ div.wsc-badge.wsc-theme-custom.wsc-badgewrapper__badge.wsc-badge--animationMove.
     -ms-background-position-y: 1px !important;
     -ms-background-position-x: 1px !important;
     background-image: url("/++resource++imio.webspellchecker/plone_spinner.svg") !important;
+    background-color: transparent !important;
     animation: none !important
 }

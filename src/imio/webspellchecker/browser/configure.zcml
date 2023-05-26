@@ -9,6 +9,7 @@
       name="imio.webspellchecker"
       directory="static"
       />
+
     <browser:page
       name="wscinit.js"
       for="*"

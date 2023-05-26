@@ -12,7 +12,7 @@
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/@@webspellchecker-controlpanel"
-        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/p5-controlpanel-icon.png"
+        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/controlpanel-icon.png"
         visible="True"
         i18n:attributes="title">
             <permission>Manage portal</permission>

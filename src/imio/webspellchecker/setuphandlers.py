@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
-from Products.CMFQuickInstallerTool import interfaces as QuickInstaller
+
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):

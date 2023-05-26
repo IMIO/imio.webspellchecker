@@ -3,16 +3,16 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="imio.webspellchecker">
+    <include package="Products.CMFCore" file="permissions.zcml" />
 
     <browser:resourceDirectory
       name="imio.webspellchecker"
       directory="static"
       />
-
     <browser:page
-      name="wsc_init.js"
+      name="wscinit.js"
       for="*"
-      class=".jsview.JsView"
+      class=".webspellchecker.WebspellcheckerInitJS"
       permission="zope.Public"
       />
 
@@ -21,6 +21,7 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class="imio.webspellchecker.browser.controlpanel.WebspellcheckerSettings"
       permission="cmf.ManagePortal"
+      layer="imio.webspellchecker.interfaces.IImioWebspellcheckerLayer"
       />
 
 </configure>

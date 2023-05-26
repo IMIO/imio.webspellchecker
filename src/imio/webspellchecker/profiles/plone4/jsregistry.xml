@@ -3,5 +3,5 @@
    autogroup="False" debugmode="False">
  <javascript cacheable="True" compression="safe" conditionalcomment=""
     cookable="False" enabled="True" expression=""
-    id="wsc_init.js" inline="False" authenticated="True"/>
+    id="wscinit.js" inline="False" authenticated="True"/>
 </object>

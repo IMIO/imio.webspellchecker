@@ -5,6 +5,7 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import PloneWithPackageLayer
 from plone.testing import z2
 
 import imio.webspellchecker
@@ -42,11 +43,17 @@ IMIO_WEBSPELLCHECKER_FUNCTIONAL_TESTING = FunctionalTesting(
     name='ImioWebspellcheckerLayer:FunctionalTesting',
 )
 
+WEBSPELLCHECKER_ROBOT_BASE = PloneWithPackageLayer(
+    bases=(REMOTE_LIBRARY_BUNDLE_FIXTURE, ),
+    zcml_package=imio.webspellchecker,
+    zcml_filename='testing.zcml',
+    gs_profile_id='imio.webspellchecker:testing',
+    name='WEBSPELLCHECKER_ROBOT_BASE',
+)
 
 IMIO_WEBSPELLCHECKER_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        IMIO_WEBSPELLCHECKER_FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
+        WEBSPELLCHECKER_ROBOT_BASE,
         z2.ZSERVER_FIXTURE,
     ),
     name='ImioWebspellcheckerLayer:AcceptanceTesting',

@@ -2,16 +2,17 @@
 <object name="portal_controlpanel"
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="collective.documentgenerator"
-        purge="False">
+        purge="True">
 
 
     <configlet
-        title="Webspellchecker settings"
+        title="Webspellchecker"
         action_id="imio.webspellchecker.settings"
         appId="imio.webspellchecker"
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/@@webspellchecker-controlpanel"
+        icon_expr="string:${portal_url}/++resource++imio.webspellchecker/p4-controlpanel-icon.png"
         visible="True"
         i18n:attributes="title">
             <permission>Manage portal</permission>

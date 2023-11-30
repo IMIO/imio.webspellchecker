@@ -13,6 +13,13 @@
 
   <include file="profiles.zcml" />
 
+
+  <subscriber
+    for=".browser.controlpanel.IWebspellcheckerControlPanelSchema
+         plone.registry.interfaces.IRecordModifiedEvent"
+    handler=".browser.controlpanel.handle_configuration_changed"
+  />
+
   <utility
     name="imio.webspellchecker.vocabularies.HttpProtocols"
     component=".vocabularies.WebspellcheckerHttpProtocolsVocabularyFactory"
@@ -28,6 +35,6 @@
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="imio.webspellchecker-hiddenprofiles"
-      />
+  />
 
 </configure>

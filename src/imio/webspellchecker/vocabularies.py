@@ -1,16 +1,17 @@
-from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleVocabulary
-from zope.schema.vocabulary import SimpleTerm
 from zope.interface import provider
+from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 @provider(IVocabularyFactory)
 class WebspellcheckerHttpProtocolsVocabulary(object):
-    """Vocabulary factory for http protocols
-    """
+    """Vocabulary factory for http protocols"""
 
     def __call__(self, context):
-        return SimpleVocabulary([SimpleTerm("http", "HTTP"), SimpleTerm("https", "HTTPS")])
+        return SimpleVocabulary(
+            [SimpleTerm("http", "HTTP"), SimpleTerm("https", "HTTPS")]
+        )
 
 
 WebspellcheckerHttpProtocolsVocabularyFactory = WebspellcheckerHttpProtocolsVocabulary()
@@ -18,8 +19,7 @@ WebspellcheckerHttpProtocolsVocabularyFactory = WebspellcheckerHttpProtocolsVoca
 
 @provider(IVocabularyFactory)
 class WebspellcheckerThemesVocabulary(object):
-    """Vocabulary factory for http protocols
-    """
+    """Vocabulary factory for http protocols"""
 
     def __call__(self, context):
         return SimpleVocabulary(

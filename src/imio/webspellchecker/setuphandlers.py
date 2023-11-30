@@ -5,13 +5,13 @@ from zope.interface import implementer
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
-
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [
-            u'imio.webspellchecker:base',
-            u'imio.webspellchecker:uninstall',
+            "imio.webspellchecker:base",
+            "imio.webspellchecker:uninstall",
         ]
+
 
 def post_install(context):
     """Post install script"""

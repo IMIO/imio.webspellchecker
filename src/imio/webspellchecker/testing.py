@@ -20,13 +20,13 @@ class ImioWebspellcheckerLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
-        import plone.restapi
-        self.loadZCML(package=plone.restapi)
-        self.loadZCML(package=imio.webspellchecker)
+        self.loadZCML(package=imio.webspellchecker, name="testing.zcml")
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'imio.webspellchecker:default')
+        applyProfile(portal, "imio.webspellchecker:default")
+        applyProfile(portal, "imio.webspellchecker:testing")
 
 
 IMIO_WEBSPELLCHECKER_FIXTURE = ImioWebspellcheckerLayer()
@@ -34,21 +34,21 @@ IMIO_WEBSPELLCHECKER_FIXTURE = ImioWebspellcheckerLayer()
 
 IMIO_WEBSPELLCHECKER_INTEGRATION_TESTING = IntegrationTesting(
     bases=(IMIO_WEBSPELLCHECKER_FIXTURE,),
-    name='ImioWebspellcheckerLayer:IntegrationTesting',
+    name="ImioWebspellcheckerLayer:IntegrationTesting",
 )
 
 
 IMIO_WEBSPELLCHECKER_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(IMIO_WEBSPELLCHECKER_FIXTURE,),
-    name='ImioWebspellcheckerLayer:FunctionalTesting',
+    name="ImioWebspellcheckerLayer:FunctionalTesting",
 )
 
 WEBSPELLCHECKER_ROBOT_BASE = PloneWithPackageLayer(
-    bases=(REMOTE_LIBRARY_BUNDLE_FIXTURE, ),
+    bases=(REMOTE_LIBRARY_BUNDLE_FIXTURE,),
     zcml_package=imio.webspellchecker,
-    zcml_filename='testing.zcml',
-    gs_profile_id='imio.webspellchecker:testing',
-    name='WEBSPELLCHECKER_ROBOT_BASE',
+    zcml_filename="testing.zcml",
+    gs_profile_id="imio.webspellchecker:testing",
+    name="WEBSPELLCHECKER_ROBOT_BASE",
 )
 
 IMIO_WEBSPELLCHECKER_ACCEPTANCE_TESTING = FunctionalTesting(
@@ -56,5 +56,5 @@ IMIO_WEBSPELLCHECKER_ACCEPTANCE_TESTING = FunctionalTesting(
         WEBSPELLCHECKER_ROBOT_BASE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='ImioWebspellcheckerLayer:AcceptanceTesting',
+    name="ImioWebspellcheckerLayer:AcceptanceTesting",
 )

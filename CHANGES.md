@@ -1,7 +1,7 @@
 # Changelog
 
 
-## 1.0b2 (unreleased)
+1.0b2 (2023-12-01)
 
 - Replace rst by markdown.
   [duchenean]

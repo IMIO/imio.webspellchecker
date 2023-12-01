@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b1 (unreleased)
+1.0b1 (2023-12-01)
 ------------------
 
 - Refactor the script registration. We don't rely on Plone built-in tools like

@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="imio.webspellchecker",
-    version="1.0a2.dev0",
+    version="1.0b1",
     description="An add-on for Plone",
     long_description=long_description,
     classifiers=[

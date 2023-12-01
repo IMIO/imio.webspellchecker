@@ -7,8 +7,8 @@ from setuptools import setup
 
 long_description = "\n\n".join(
     [
-        open("README.rst").read(),
-        open("CONTRIBUTORS.rst").read(),
+        open("README.md").read(),
+        open("CONTRIBUTORS.md").read(),
         open("CHANGES.rst").read(),
     ]
 )

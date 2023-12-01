@@ -1,6 +1,7 @@
 # imio.webspellchecker
 
 [![Lint](https://github.com/IMIO/imio.webspellchecker/actions/workflows/lint.yml/badge.svg)](https://github.com/IMIO/imio.webspellchecker/actions/workflows/lint.yml) [![Tests](https://github.com/IMIO/imio.webspellchecker/actions/workflows/tests.yml/badge.svg)](https://github.com/IMIO/imio.webspellchecker/actions/workflows/tests.yml)
+![Codecov](https://img.shields.io/codecov/c/github/imio/imio.webspellchecker)
 
 This package provides seamless integration between Plone (versions 4.3, 5.2, and 6.0) and [Webspellchecker WProofReader](https://webspellchecker.com/wsc-proofreader/). It is designed to work out-of-the-box with multiple WYSIWYG editors used in Plone, enhancing the content creation process with advanced spellchecking capabilities.
 

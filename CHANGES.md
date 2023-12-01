@@ -3,7 +3,8 @@
 
 ## 1.0b2 (unreleased)
 
-- Nothing changed yet.
+- Replace rst by markdown.
+  [duchenean]
 
 
 ## 1.0b1 (2023-12-01)

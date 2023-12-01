@@ -9,7 +9,7 @@ long_description = "\n\n".join(
     [
         open("README.md").read(),
         open("CONTRIBUTORS.md").read(),
-        open("CHANGES.rst").read(),
+        open("CHANGES.md").read(),
     ]
 )
 
@@ -17,8 +17,10 @@ long_description = "\n\n".join(
 setup(
     name="imio.webspellchecker",
     version="1.0b2.dev0",
-    description="An add-on for Plone",
+    description="Integration of Webspellchecker's WProofReader with Plone, "
+    "providing real-time spellchecking for various WYSIWYG editors.",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",

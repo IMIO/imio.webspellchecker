@@ -1,15 +1,12 @@
-Changelog
-=========
+# Changelog
 
 
-1.0b2 (unreleased)
-------------------
+## 1.0b2 (unreleased)
 
 - Nothing changed yet.
 
 
-1.0b1 (2023-12-01)
-------------------
+## 1.0b1 (2023-12-01)
 
 - Refactor the script registration. We don't rely on Plone built-in tools like
   the resources registry (or portal_javascript in P4) due to inappropriate
@@ -19,8 +16,7 @@ Changelog
   [duchenean]
 
 
-1.0a1 (2023-05-26)
-------------------
+## 1.0a1 (2023-05-26)
 
 - Initial release.
   [duchenean]

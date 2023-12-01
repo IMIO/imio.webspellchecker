@@ -6,6 +6,9 @@
 imio.webspellchecker
 ====================
 
+[![Lint](https://github.com/IMIO/imio.webspellchecker/actions/workflows/lint.yml/badge.svg)](https://github.com/IMIO/imio.webspellchecker/actions/workflows/lint.yml)
+[![Tests](https://github.com/IMIO/imio.webspellchecker/actions/workflows/tests.yml/badge.svg)](https://github.com/IMIO/imio.webspellchecker/actions/workflows/tests.yml)
+
 Tell me what your product does
 
 Features

@@ -1,7 +1,7 @@
 # Changelog
 
 
-## 1.0b3 (unreleased)
+1.0b3 (2024-01-12)
 
 - Allow to restrict the webspellchecker usage by portal types.
   [aduchene]

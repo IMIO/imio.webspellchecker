@@ -1,6 +1,12 @@
 # Changelog
 
 
+1.0b4 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.0b3 (2024-01-12)
 
 - Allow to restrict the webspellchecker usage by portal types.

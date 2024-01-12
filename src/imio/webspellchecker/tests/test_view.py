@@ -121,7 +121,7 @@ class TestView(WSCIntegrationTest):
         transaction.commit()
         self.browser.open(self.INIT_SCRIPT_URL)
         self.assertIn(
-            "\"enableAutoSearchIn\": [\"#id, .class\"]};",
+            '"enableAutoSearchIn": ["#id, .class"]};',
             self.browser.contents,
         )
 
@@ -138,13 +138,13 @@ class TestView(WSCIntegrationTest):
         transaction.commit()
         self.browser.open(self.INIT_SCRIPT_URL)
         self.assertIn(
-            "\"disableAutoSearchIn\": [\".textarea-widget\"]};",
+            '"disableAutoSearchIn": [".textarea-widget"]};',
             self.browser.contents,
         )
 
     def test_js_injection(self):
         malicious_input = """ ""};<script>alert('I'm malicious')</script> """
-        good_input = "[\".my-class\"]"
+        good_input = '[".my-class"]'
         with self.assertRaises(Invalid):
             is_valid_json(malicious_input)
         self.assertTrue(is_valid_json(good_input))

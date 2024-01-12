@@ -71,8 +71,10 @@ class IWebspellcheckerControlPanelSchema(Interface):
 
     allowed_portal_types = schema.List(
         title=_("Allowed portal types"),
-        description=_("Define the portal types where the webspellchecker will be active."
-                    "If this is left blank, the webspellchecker will be available on all portal types."),
+        description=_(
+            "Define the portal types where the webspellchecker will be active."
+            "If this is left blank, the webspellchecker will be available on all portal types."
+        ),
         value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
         required=False,
         missing_value=[],
@@ -81,8 +83,10 @@ class IWebspellcheckerControlPanelSchema(Interface):
 
     disallowed_portal_types = schema.List(
         title=_("Disallowed portal types"),
-        description=_("Define the portal types where the webspellchecker should not be active."
-                    "If this is left blank, this setting will be ignored."),
+        description=_(
+            "Define the portal types where the webspellchecker should not be active."
+            "If this is left blank, this setting will be ignored."
+        ),
         value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
         required=False,
         missing_value=[],

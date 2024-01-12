@@ -8,6 +8,18 @@ from Products.CMFPlone.utils import safe_unicode
 from zope import schema
 from zope.interface import implementer
 from zope.interface import Interface
+from zope.interface import Invalid
+
+import json
+
+
+def is_valid_json(value):
+    if value:
+        try:
+            json.loads(value)
+        except:  # NOQA: E722
+            raise Invalid(_(u"Invalid JSON."))
+    return True
 
 
 class IWebspellcheckerControlPanelSchema(Interface):
@@ -15,7 +27,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
 
     enabled = schema.Bool(
         title=_("Enabled"),
-        description=_("Enable or disable Webspellchecker."),
+        description=_("Enable or disable Webspellchecker, globally."),
         required=False,
         default=False,
     )
@@ -26,7 +38,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
         default=False,
     )
     enable_grammar = schema.Bool(
-        title=_("Enable grammar"),
+        title=_("Enable grammar checking"),
         description=_(""),
         required=False,
         default=True,
@@ -55,6 +67,57 @@ class IWebspellcheckerControlPanelSchema(Interface):
         description=_(""),
         required=False,
         default="",
+    )
+
+    allowed_portal_types = schema.List(
+        title=_("Allowed portal types"),
+        description=_("Define the portal types where the webspellchecker will be active."
+                    "If this is left blank, the webspellchecker will be available on all portal types."),
+        value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
+        required=False,
+        missing_value=[],
+        default=[],
+    )
+
+    disallowed_portal_types = schema.List(
+        title=_("Disallowed portal types"),
+        description=_("Define the portal types where the webspellchecker should not be active."
+                    "If this is left blank, this setting will be ignored."),
+        value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
+        required=False,
+        missing_value=[],
+        default=[],
+    )
+
+    # see https://webspellchecker.com/docs/api/wscbundle/AutoSearchMechanism.html
+    enable_autosearch_in = schema.TextLine(
+        title=_("Enable autosearch in"),
+        description=_(
+            "The parameter allows enabling the autoSearch mechanism only for elements with provided class, id, data attribute name or HTML elements type. "
+            "Possible values are: <br>"
+            " - '.class' - enable autoSearch for elements with a specified class. <br>"
+            " - '#id' - enable autoSearch for elements with a specified id. <br>"
+            " - '[data-attribute]' - enable autoSearch for elements with a specified data attribute name. <br>"
+            " - 'textarea' - enable autoSearch for HTML elements (e.g. textarea, input)."
+        ),
+        required=False,
+        default="",
+        constraint=is_valid_json,
+    )
+
+    disable_autosearch_in = schema.TextLine(
+        title=_("Disable autosearch in"),
+        description=_(
+            "The parameter allows disabling the autoSearch mechanism by class, id, data attribute name and HTML elements."
+            "If enable_autosearch_in option is specified than this option will be ignored. Possible values are: <br>"
+            " - '.class' - disable autoSearch for elements with a specified class. <br>"
+            " - '#id' - disable autoSearch for elements with a specified id. <br>"
+            " - '[data-attribute]' - disable autoSearch for elements with a specified data attribute name. <br>"
+            " - 'textarea' - disable autoSearch for HTML elements (e.g. textarea, input)."
+        ),
+        required=False,
+        default="",
+        constraint=is_valid_json,
     )
 
 

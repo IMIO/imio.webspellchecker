@@ -152,3 +152,7 @@ div.wsc-badge.wsc-theme-custom.wsc-badgewrapper__badge.wsc-badge--animationMove.
     background-color: transparent !important;
     animation: none !important
 }
+
+.wsc-theme-custom .wsc-badge__item .wsc-badge__icon:hover, .wsc-badge__item .wsc-button:focus .wsc-badge__icon {
+  color: var(--wsc_primary-800) !important;
+}

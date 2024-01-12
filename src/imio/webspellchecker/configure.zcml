@@ -21,12 +21,6 @@
   />
 
   <utility
-    name="imio.webspellchecker.vocabularies.HttpProtocols"
-    component=".vocabularies.WebspellcheckerHttpProtocolsVocabularyFactory"
-    provides="zope.schema.interfaces.IVocabularyFactory"
-  />
-
-  <utility
     name="imio.webspellchecker.vocabularies.Themes"
     component=".vocabularies.WebspellcheckerThemesVocabularyFactory"
     provides="zope.schema.interfaces.IVocabularyFactory"

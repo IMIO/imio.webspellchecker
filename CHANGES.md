@@ -1,13 +1,15 @@
 # Changelog
 
 
-1.0b3 (unreleased)
-------------------
+## 1.0b3 (unreleased)
 
-- Nothing changed yet.
+- Allow to restrict the webspellchecker usage by portal types.
+  [aduchene]
+- Allow to restrict the webspellchecker usage by css attributes (class, id, ...)
+  [aduchene]
 
 
-1.0b2 (2023-12-01)
+## 1.0b2 (2023-12-01)
 
 - Replace rst by markdown.
   [duchenean]

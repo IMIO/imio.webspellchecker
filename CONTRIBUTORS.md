@@ -1,4 +1,3 @@
-Contributors
-============
+# Contributors
 
 - Antoine Duchêne, (iMio, scrl)

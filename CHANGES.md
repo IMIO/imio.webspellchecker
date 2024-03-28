@@ -1,18 +1,18 @@
 # Changelog
 
 
-1.0b4 (unreleased)
-------------------
+## 1.0b4 (unreleased)
 
-- Nothing changed yet.
+- Fix bad bundling (MANIFEST.in).
+  [duchenean]
 
 
-1.0b3 (2024-01-12)
+## 1.0b3 (2024-01-12)
 
 - Allow to restrict the webspellchecker usage by portal types.
-  [aduchene]
+  [duchenean]
 - Allow to restrict the webspellchecker usage by css attributes (class, id, ...)
-  [aduchene]
+  [duchenean]
 
 
 ## 1.0b2 (2023-12-01)

@@ -1,7 +1,7 @@
 # Changelog
 
 
-## 1.0b5 (unreleased)
+1.0b5 (2024-03-29)
 
 - Use unicode for default values.
   [aduchene]

@@ -1,10 +1,10 @@
 # Changelog
 
 
-1.0b5 (unreleased)
-------------------
+## 1.0b5 (unreleased)
 
-- Nothing changed yet.
+- Use unicode for default values.
+  [aduchene]
 
 
 ## 1.0b4 (2024-03-28)

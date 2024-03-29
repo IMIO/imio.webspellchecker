@@ -54,19 +54,19 @@ class IWebspellcheckerControlPanelSchema(Interface):
         title=_("WSC JS bundle URL"),
         description=_(""),
         required=True,
-        default="",
+        default=u"",
     )
     service_url = schema.TextLine(
         title=_("WSC service URL"),
         description=_(""),
         required=True,
-        default="",
+        default=u"",
     )
     service_id = schema.TextLine(
         title=_("Service ID"),
         description=_(""),
         required=False,
-        default="",
+        default=u"",
     )
 
     allowed_portal_types = schema.List(
@@ -105,7 +105,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
             " - 'textarea' - enable autoSearch for HTML elements (e.g. textarea, input)."
         ),
         required=False,
-        default="",
+        default=u"",
         constraint=is_valid_json,
     )
 
@@ -120,7 +120,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
             " - 'textarea' - disable autoSearch for HTML elements (e.g. textarea, input)."
         ),
         required=False,
-        default="",
+        default=u"",
         constraint=is_valid_json,
     )
 

@@ -1,7 +1,13 @@
 # Changelog
 
 
-1.0b4 (2024-03-28)
+1.0b5 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+## 1.0b4 (2024-03-28)
 
 - Fix bad bundling (MANIFEST.in).
   [duchenean]

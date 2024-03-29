@@ -1,6 +1,12 @@
 # Changelog
 
 
+1.0b6 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.0b5 (2024-03-29)
 
 - Use unicode for default values.

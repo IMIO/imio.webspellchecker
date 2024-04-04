@@ -1,7 +1,7 @@
 # Changelog
 
 
-## 1.0b6 (unreleased)
+1.0b6 (2024-04-04)
 
 - Use proper type on the script tags.
   [aduchene]

@@ -1,6 +1,12 @@
 # Changelog
 
 
+1.0b7 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.0b6 (2024-04-04)
 
 - Use proper type on the script tags.

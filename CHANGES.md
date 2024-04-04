@@ -1,13 +1,12 @@
 # Changelog
 
 
-1.0b6 (unreleased)
-------------------
+## 1.0b6 (unreleased)
 
-- Nothing changed yet.
+- Use proper type on the script tags.
+  [aduchene]
 
-
-1.0b5 (2024-03-29)
+## 1.0b5 (2024-03-29)
 
 - Use unicode for default values.
   [aduchene]

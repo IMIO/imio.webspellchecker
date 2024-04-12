@@ -1,8 +1,10 @@
+from imio.webspellchecker import config
 from imio.webspellchecker.browser.controlpanel import is_valid_json
 from imio.webspellchecker.tests import WSCIntegrationTest
 from plone import api
 from plone.testing._z2_testbrowser import Browser
-from urllib.error import HTTPError
+from Products.CMFPlone.utils import safe_unicode
+from six.moves.urllib.error import HTTPError
 from zope.interface import Invalid
 
 import transaction
@@ -31,10 +33,7 @@ class TestView(WSCIntegrationTest):
         self.assertIn("default", self.browser.contents)
 
     def test_js_view_is_disabled(self):
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.enabled",
-            False,
-        )
+        config.set_enabled(False)
         transaction.commit()
         self.browser.open(self.INIT_SCRIPT_URL)
         self.assertEqual(
@@ -51,10 +50,7 @@ class TestView(WSCIntegrationTest):
         self.assertIn("wscbundle", self.browser.contents)
 
     def test_scripts_viewlet_disabled(self):
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.enabled",
-            False,
-        )
+        config.set_enabled(False)
         transaction.commit()
         self.browser.open(self.portal.absolute_url())
         self.assertNotIn("wscinit.js", self.browser.contents)
@@ -62,21 +58,15 @@ class TestView(WSCIntegrationTest):
 
     def test_scripts_viewlet_timestamps(self):
         before_scripts_timestamp = api.portal.get_registry_record("imio.webspellchecker.scripts_timestamp")
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.enable_grammar",
-            False,
-        )
+        config.set_enable_grammar(False)
         transaction.commit()
         after_scripts_timestamp = api.portal.get_registry_record("imio.webspellchecker.scripts_timestamp")
-        self.assertNotEquals(after_scripts_timestamp, before_scripts_timestamp)
+        self.assertNotEqual(after_scripts_timestamp, before_scripts_timestamp)
         self.browser.open(self.portal.absolute_url())
         self.assertIn("wscinit.js?t=" + after_scripts_timestamp, self.browser.contents)
 
     def test_allowed_content_types(self):
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.allowed_portal_types",
-            ["Document"],
-        )
+        config.set_allowed_portal_types(["Document"])
         transaction.commit()
 
         doc = api.content.create(type="Document", title="My Document", container=self.portal)
@@ -91,10 +81,7 @@ class TestView(WSCIntegrationTest):
         self.assertNotIn("wscbundle", self.browser.contents)
 
     def test_disallowed_content_types(self):
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.disallowed_portal_types",
-            ["Document", "Image"],
-        )
+        config.set_disallowed_portal_types(["Document", "Image"])
         transaction.commit()
 
         doc = api.content.create(type="Document", title="My Document", container=self.portal)
@@ -110,18 +97,12 @@ class TestView(WSCIntegrationTest):
 
     def test_enable_autosearch_for(self):
         self.browser.open(self.INIT_SCRIPT_URL)
-        self.assertNotIn(
-            "enableAutoSearchIn",
-            self.browser.contents,
-        )
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.enable_autosearch_in",
-            '["#id, .class"]',
-        )
+        self.assertNotIn("enableAutoSearchIn", self.browser.contents)
+        config.set_enable_autosearch_in(safe_unicode('["#id, .class"]'))
         transaction.commit()
         self.browser.open(self.INIT_SCRIPT_URL)
         self.assertIn(
-            '"enableAutoSearchIn": ["#id, .class"]};',
+            '"enableAutoSearchIn": ["#id, .class"]',
             self.browser.contents,
         )
 
@@ -131,28 +112,22 @@ class TestView(WSCIntegrationTest):
             "disableAutoSearchIn",
             self.browser.contents,
         )
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.disable_autosearch_in",
-            '[".textarea-widget"]',
-        )
+        config.set_disable_autosearch_in(safe_unicode('[".textarea-widget"]'))
         transaction.commit()
         self.browser.open(self.INIT_SCRIPT_URL)
         self.assertIn(
-            '"disableAutoSearchIn": [".textarea-widget"]};',
+            '"disableAutoSearchIn": [".textarea-widget"]',
             self.browser.contents,
         )
 
     def test_js_injection(self):
-        malicious_input = """ ""};<script>alert('I'm malicious')</script> """
+        malicious_input = safe_unicode(""" ""};<script>alert('I'm malicious')</script> """)
         good_input = '[".my-class"]'
         with self.assertRaises(Invalid):
             is_valid_json(malicious_input)
         self.assertTrue(is_valid_json(good_input))
 
-        api.portal.set_registry_record(
-            "imio.webspellchecker.browser.controlpanel.IWebspellcheckerControlPanelSchema.enable_autosearch_in",
-            malicious_input,
-        )
+        config.set_enable_autosearch_in(malicious_input)
         transaction.commit()
         with self.assertRaises(HTTPError):
             self.browser.open(self.INIT_SCRIPT_URL)

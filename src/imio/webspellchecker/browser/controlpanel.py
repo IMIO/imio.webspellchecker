@@ -75,7 +75,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
             "Define the portal types where the webspellchecker will be active."
             "If this is left blank, the webspellchecker will be available on all portal types."
         ),
-        value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
+        value_type=schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes"),
         required=False,
         missing_value=[],
         default=[],
@@ -87,7 +87,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
             "Define the portal types where the webspellchecker should not be active."
             "If this is left blank, this setting will be ignored."
         ),
-        value_type=schema.Choice(vocabulary="plone.app.vocabularies.UserFriendlyTypes"),
+        value_type=schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes"),
         required=False,
         missing_value=[],
         default=[],
@@ -97,7 +97,8 @@ class IWebspellcheckerControlPanelSchema(Interface):
     enable_autosearch_in = schema.TextLine(
         title=_("Enable autosearch in"),
         description=_(
-            "The parameter allows enabling the autoSearch mechanism only for elements with provided class, id, data attribute name or HTML elements type. "
+            "The parameter allows enabling the autoSearch mechanism only for elements "
+            "with provided class, id, data attribute name or HTML elements type. "
             "Possible values are: <br>"
             " - '.class' - enable autoSearch for elements with a specified class. <br>"
             " - '#id' - enable autoSearch for elements with a specified id. <br>"
@@ -112,7 +113,8 @@ class IWebspellcheckerControlPanelSchema(Interface):
     disable_autosearch_in = schema.TextLine(
         title=_("Disable autosearch in"),
         description=_(
-            "The parameter allows disabling the autoSearch mechanism by class, id, data attribute name and HTML elements."
+            "The parameter allows disabling the autoSearch mechanism by class, id, "
+            "data attribute name and HTML elements."
             "If enable_autosearch_in option is specified than this option will be ignored. Possible values are: <br>"
             " - '.class' - disable autoSearch for elements with a specified class. <br>"
             " - '#id' - disable autoSearch for elements with a specified id. <br>"

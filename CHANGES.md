@@ -1,6 +1,12 @@
 # Changelog
 
 
+1.0b8 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 1.0b7 (2024-04-15)
 
 - Added helpers to `get` and `set` config registry values.

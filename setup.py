@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="imio.webspellchecker",
-    version="1.0b7.dev0",
+    version="1.0b7",
     description="Integration of Webspellchecker's WProofReader with Plone, "
     "providing real-time spellchecking for various WYSIWYG editors.",
     long_description=long_description,

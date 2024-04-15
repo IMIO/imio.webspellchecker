@@ -1,13 +1,17 @@
 # Changelog
 
 
-1.0b7 (unreleased)
-------------------
+## 1.0b7 (unreleased)
 
-- Nothing changed yet.
+- Added helpers to `get` and `set` config registry values.
+  [gbastien]
+- Use `plone.app.vocabularies.PortalTypes` instead
+ `plone.app.vocabularies.UserFriendlyTypes` for `allowed_portal_types` and
+ `disallowed_portal_types` config parameters.
+  [gbastien]
 
 
-1.0b6 (2024-04-04)
+## 1.0b6 (2024-04-04)
 
 - Use proper type on the script tags.
   [aduchene]

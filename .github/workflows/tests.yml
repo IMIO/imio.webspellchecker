@@ -11,13 +11,11 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                  - python-version: "2.7"
+                  - python-version: "2.7.18"
                     plone-version: "4.3"
-                  - python-version: "3.8"
+                  - python-version: "3.8.15"
                     plone-version: "5.2"
-                  - python-version: "3.11"
-                    plone-version: "6.0"
-                  - python-version: "3.12"
+                  - python-version: "3.11.2"
                     plone-version: "6.0"
 
       runs-on: "ubuntu-latest"
@@ -33,10 +31,16 @@ jobs:
                   #restore-keys: |
                   #  ${{ runner.os }}-tox-
             - name: Install python version ${{ matrix.python-version }}
-              uses: gabrielfalcao/pyenv-action@v11
+              uses: gabrielfalcao/pyenv-action@v17
               with:
-                default: "${{ matrix.python }}"
+                default: "${{ matrix.python-version }}"
                 command: pip install -U pip  # upgrade pip after installing python
+
+            - name: debug
+              run: |
+                  python --version
+                  pip --version
+
             - name: setup buildout cache
               run: |
                   mkdir -p ~/buildout-cache/{eggs,downloads}

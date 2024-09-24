@@ -38,7 +38,7 @@ class WebspellcheckerInitJS(BrowserView):
         wsc_settings = {
             "autoSearch": True,
             "autoDestroy": True,
-            "lang": "auto",
+            "lang": settings.correction_lang,
             "localization": language,
             "enableGrammar": settings.enable_grammar,
             "theme": settings.theme,

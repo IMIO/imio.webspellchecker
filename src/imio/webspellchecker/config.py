@@ -19,6 +19,10 @@ def get_theme():
     return api.portal.get_registry_record(name="theme", interface=IWebspellcheckerControlPanelSchema)
 
 
+def get_correction_lang():
+    return api.portal.get_registry_record(name="correction_lang", interface=IWebspellcheckerControlPanelSchema)
+
+
 def get_js_bundle_url():
     return api.portal.get_registry_record(name="js_bundle_url", interface=IWebspellcheckerControlPanelSchema)
 
@@ -63,6 +67,10 @@ def set_enable_grammar(value):
 
 def set_theme(value):
     api.portal.set_registry_record(name="theme", value=value, interface=IWebspellcheckerControlPanelSchema)
+
+
+def set_correction_lang(value):
+    api.portal.set_registry_record(name="correction_lang", value=value, interface=IWebspellcheckerControlPanelSchema)
 
 
 def set_js_bundle_url(value):

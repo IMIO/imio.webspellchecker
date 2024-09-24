@@ -50,6 +50,14 @@ class IWebspellcheckerControlPanelSchema(Interface):
         vocabulary="imio.webspellchecker.vocabularies.Themes",
         default="default",
     )
+
+    correction_lang = schema.TextLine(
+        title=_("Correction language"),
+        description=_(""),
+        required=True,
+        default="auto",
+    )
+
     js_bundle_url = schema.TextLine(
         title=_("WSC JS bundle URL"),
         description=_(""),

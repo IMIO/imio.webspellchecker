@@ -55,7 +55,7 @@ class IWebspellcheckerControlPanelSchema(Interface):
         title=_("Correction language"),
         description=_(""),
         required=True,
-        default="auto",
+        default=u"auto",
     )
 
     js_bundle_url = schema.TextLine(

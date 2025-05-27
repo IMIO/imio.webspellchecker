@@ -4,6 +4,7 @@ from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
+
 @provider(IVocabularyFactory)
 class WebspellcheckerThemesVocabulary(object):
     """Vocabulary factory for http protocols"""
@@ -34,8 +35,9 @@ class WebspellcheckerDefaultLanguagesVocabulary(object):
                 SimpleTerm("fr_FR", _("French")),
                 SimpleTerm("nl_NL", _("Dutch")),
                 SimpleTerm("en_US", _("English")),
-                SimpleTerm("de_DE", _("German"))
+                SimpleTerm("de_DE", _("German")),
             ]
         )
+
 
 WebspellcheckerDefaultLanguagesVocabularyFactory = WebspellcheckerDefaultLanguagesVocabulary()

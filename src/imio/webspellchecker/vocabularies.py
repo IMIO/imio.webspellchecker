@@ -1,8 +1,8 @@
+from imio.webspellchecker import _
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-
 
 @provider(IVocabularyFactory)
 class WebspellcheckerThemesVocabulary(object):
@@ -30,11 +30,11 @@ class WebspellcheckerDefaultLanguagesVocabulary(object):
     def __call__(self, context):
         return SimpleVocabulary(
             [
-                SimpleTerm("auto", "Auto-detect"),
-                SimpleTerm("fr_FR", "French"),
-                SimpleTerm("nl_NL", "Dutch"),
-                SimpleTerm("en_US", "English"),
-                SimpleTerm("de_DE", "German")
+                SimpleTerm("auto", _("Auto-detect")),
+                SimpleTerm("fr_FR", _("French")),
+                SimpleTerm("nl_NL", _("Dutch")),
+                SimpleTerm("en_US", _("English")),
+                SimpleTerm("de_DE", _("German"))
             ]
         )
 

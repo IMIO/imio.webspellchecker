@@ -21,3 +21,21 @@ class WebspellcheckerThemesVocabulary(object):
 
 
 WebspellcheckerThemesVocabularyFactory = WebspellcheckerThemesVocabulary()
+
+
+@provider(IVocabularyFactory)
+class WebspellcheckerDefaultLanguagesVocabulary(object):
+    """Vocabulary factory for default languages"""
+
+    def __call__(self, context):
+        return SimpleVocabulary(
+            [
+                SimpleTerm("auto", "Auto-detect"),
+                SimpleTerm("fr_FR", "French"),
+                SimpleTerm("nl_NL", "Dutch"),
+                SimpleTerm("en_US", "English"),
+                SimpleTerm("de_DE", "German")
+            ]
+        )
+
+WebspellcheckerDefaultLanguagesVocabularyFactory = WebspellcheckerDefaultLanguagesVocabulary()

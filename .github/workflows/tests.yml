@@ -11,10 +11,8 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                  - python-version: "2.7.18"
-                    plone-version: "4.3"
-                  - python-version: "3.8.15"
-                    plone-version: "5.2"
+#                  - python-version: "2.7.18"
+#                    plone-version: "4.3"
                   - python-version: "3.11.2"
                     plone-version: "6.0"
 
@@ -45,12 +43,6 @@ jobs:
             - name: Install dependencies
               run: |
                   pip install tox tox-gh-actions
-            - name: Install Firefox
-              uses: browser-actions/setup-firefox@latest
-              with:
-                firefox-version: '102.2.0esr'
-            - name: Xvfb
-              run: Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
             - name: Test with tox
               run: |
                   tox -r
@@ -58,7 +50,7 @@ jobs:
                 DISPLAY: :99
                 PLONE-VERSION: ${{ matrix.plone-version }}
                 PYTHON-VERSION: ${{ matrix.python-version }}
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               if: failure()
               with:
                 name: ${{ matrix.python-version }}-${{ matrix.plone-version }}

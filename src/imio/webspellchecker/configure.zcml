@@ -12,6 +12,7 @@
   <include package=".browser" />
 
   <include file="profiles.zcml" />
+  <include file="upgrades.zcml" />
 
 
   <subscriber
@@ -23,6 +24,12 @@
   <utility
     name="imio.webspellchecker.vocabularies.Themes"
     component=".vocabularies.WebspellcheckerThemesVocabularyFactory"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+  />
+
+  <utility
+    name="imio.webspellchecker.vocabularies.DefaultLanguages"
+    component=".vocabularies.WebspellcheckerDefaultLanguagesVocabularyFactory"
     provides="zope.schema.interfaces.IVocabularyFactory"
   />
 

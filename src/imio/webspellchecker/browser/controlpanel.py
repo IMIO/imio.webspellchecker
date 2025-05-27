@@ -43,6 +43,19 @@ class IWebspellcheckerControlPanelSchema(Interface):
         required=False,
         default=True,
     )
+    enable_autocorrect = schema.Bool(
+        title=_("Enable autocorrect"),
+        description=_("Enable or disable autocorrect feature."),
+        required=False,
+        default=False,
+    )
+    default_language = schema.Choice(
+        title=_("Default language"),
+        description=_("Default language for the webspellchecker."),
+        required=True,
+        vocabulary="imio.webspellchecker.vocabularies.DefaultLanguages",
+        default="fr_FR",
+    )
     theme = schema.Choice(
         title=_("Theme"),
         description=_(""),
@@ -68,7 +81,6 @@ class IWebspellcheckerControlPanelSchema(Interface):
         required=False,
         default=u"",
     )
-
     allowed_portal_types = schema.List(
         title=_("Allowed portal types"),
         description=_(
@@ -80,7 +92,6 @@ class IWebspellcheckerControlPanelSchema(Interface):
         missing_value=[],
         default=[],
     )
-
     disallowed_portal_types = schema.List(
         title=_("Disallowed portal types"),
         description=_(
@@ -109,7 +120,6 @@ class IWebspellcheckerControlPanelSchema(Interface):
         default=u"",
         constraint=is_valid_json,
     )
-
     disable_autosearch_in = schema.TextLine(
         title=_("Disable autosearch in"),
         description=_(

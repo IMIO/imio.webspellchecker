@@ -1,13 +1,14 @@
 # Changelog
 
 
-1.0b8 (unreleased)
+1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add new settings to manage webspellchecker.
+  [aduchene]
 
 
-1.0b7 (2024-04-15)
+## 1.0b7 (2024-04-15)
 
 - Added helpers to `get` and `set` config registry values.
   [gbastien]
@@ -31,21 +32,21 @@
 ## 1.0b4 (2024-03-28)
 
 - Fix bad bundling (MANIFEST.in).
-  [duchenean]
+  [aduchene]
 
 
 ## 1.0b3 (2024-01-12)
 
 - Allow to restrict the webspellchecker usage by portal types.
-  [duchenean]
+  [aduchene]
 - Allow to restrict the webspellchecker usage by css attributes (class, id, ...)
-  [duchenean]
+  [aduchene]
 
 
 ## 1.0b2 (2023-12-01)
 
 - Replace rst by markdown.
-  [duchenean]
+  [aduchene]
 
 
 ## 1.0b1 (2023-12-01)
@@ -53,12 +54,12 @@
 - Refactor the script registration. We don't rely on Plone built-in tools like
   the resources registry (or portal_javascript in P4) due to inappropriate
   handling of a generated JS file.
-  [duchenean]
+  [aduchene]
 - Add tests and configure the CI.
-  [duchenean]
+  [aduchene]
 
 
 ## 1.0a1 (2023-05-26)
 
 - Initial release.
-  [duchenean]
+  [aduchene]

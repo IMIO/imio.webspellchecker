@@ -1,8 +1,8 @@
 # Changelog
 
 
-1.0 (unreleased)
-------------------
+1.0 (2025-05-27)
+----------------
 
 - Add new settings to manage webspellchecker.
   [aduchene]

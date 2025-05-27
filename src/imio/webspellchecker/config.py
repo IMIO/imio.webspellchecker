@@ -19,6 +19,14 @@ def get_theme():
     return api.portal.get_registry_record(name="theme", interface=IWebspellcheckerControlPanelSchema)
 
 
+def get_enable_autocorrect():
+    return api.portal.get_registry_record(name="enable_autocorrect", interface=IWebspellcheckerControlPanelSchema)
+
+
+def get_default_language():
+    return api.portal.get_registry_record(name="default_language", interface=IWebspellcheckerControlPanelSchema)
+
+
 def get_js_bundle_url():
     return api.portal.get_registry_record(name="js_bundle_url", interface=IWebspellcheckerControlPanelSchema)
 
@@ -64,6 +72,11 @@ def set_enable_grammar(value):
 def set_theme(value):
     api.portal.set_registry_record(name="theme", value=value, interface=IWebspellcheckerControlPanelSchema)
 
+def set_enable_autocorrect(value):
+    api.portal.set_registry_record(name="enable_autocorrect", value=value, interface=IWebspellcheckerControlPanelSchema)
+
+def set_default_language(value):
+    api.portal.set_registry_record(name="default_language", value=value, interface=IWebspellcheckerControlPanelSchema)
 
 def set_js_bundle_url(value):
     api.portal.set_registry_record(name="js_bundle_url", value=value, interface=IWebspellcheckerControlPanelSchema)

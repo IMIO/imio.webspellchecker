@@ -26,6 +26,7 @@ class TestView(WSCIntegrationTest):
         self.assertIn("window.WEBSPELLCHECKER_CONFIG", self.browser.contents)
         self.assertIn("enableGrammar", self.browser.contents)
         self.assertIn("serviceHost", self.browser.contents)
+        self.assertIn("proofreadAsYouType", self.browser.contents)
         self.assertIn("wsc.fake", self.browser.contents)
         self.assertIn("servicePath", self.browser.contents)
         self.assertIn("/wscservice/api/scripts/ssrv.cgi", self.browser.contents)

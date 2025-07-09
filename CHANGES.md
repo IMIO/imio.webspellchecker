@@ -7,7 +7,7 @@
 - Fixed installation by renaming the `base` profile to `install-base` so it is
   no more alphabetically before `default`.
   Removed `metadata.xml` from the `install-base` profile.
-  [gbastien]
+  [gbastien, aduchene]
 
 1.0 (2025-05-27)
 ----------------

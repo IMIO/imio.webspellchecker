@@ -14,7 +14,6 @@ class HiddenProfiles(object):
         ]
 
 
-
 @implementer(QuickInstaller.INonInstallable)
 class HiddenProducts(object):
     def getNonInstallableProducts(self):
@@ -23,7 +22,6 @@ class HiddenProducts(object):
             "imio.webspellchecker:base",
             "imio.webspellchecker:uninstall",
         ]
-
 
 
 def post_install(context):

@@ -4,8 +4,10 @@
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Fixed installation by renaming the `base` profile to `install-base` so it is
+  no more alphabetically before `default`.
+  Removed `metadata.xml` from the `install-base` profile.
+  [gbastien]
 
 1.0 (2025-05-27)
 ----------------

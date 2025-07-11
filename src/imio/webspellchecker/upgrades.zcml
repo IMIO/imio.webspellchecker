@@ -8,7 +8,7 @@
     profile="imio.webspellchecker:default">
     <genericsetup:upgradeDepends
       title="Update imio.webspellchecker registry"
-      import_profile="imio.webspellchecker:base"
+      import_profile="imio.webspellchecker:default"
       import_steps="plone.app.registry"
       run_deps="True"/>
   </genericsetup:upgradeSteps>

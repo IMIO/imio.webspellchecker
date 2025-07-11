@@ -24,7 +24,7 @@
     post_handler=".setuphandlers.post_install"
   />
   <genericsetup:registerProfile
-    name="base"
+    name="install-base"
     title="imio.webspellchecker (base)"
     directory="profiles/base"
     description="Installs the imio.webspellchecker add-on."

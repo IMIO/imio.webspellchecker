@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
+from Products.CMFQuickInstallerTool import interfaces as QuickInstaller
 from zope.interface import implementer
 
 
@@ -7,6 +8,16 @@ from zope.interface import implementer
 class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
+        return [
+            "imio.webspellchecker:base",
+            "imio.webspellchecker:uninstall",
+        ]
+
+
+@implementer(QuickInstaller.INonInstallable)
+class HiddenProducts(object):
+    def getNonInstallableProducts(self):
+        """Do not show on QuickInstaller's list of installable products."""
         return [
             "imio.webspellchecker:base",
             "imio.webspellchecker:uninstall",

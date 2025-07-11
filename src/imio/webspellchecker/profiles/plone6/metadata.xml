@@ -2,6 +2,6 @@
 <metadata>
    <version>1001</version>
    <dependencies>
-    <dependency>profile-imio.webspellchecker:base</dependency>
+    <dependency>profile-imio.webspellchecker:install-base</dependency>
    </dependencies>
 </metadata>

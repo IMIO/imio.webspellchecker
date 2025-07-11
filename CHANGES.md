@@ -1,7 +1,7 @@
 # Changelog
 
 
-1.1 (unreleased)
+1.1 (2025-07-11)
 ----------------
 
 - Fixed installation by renaming the `base` profile to `install-base` so it is

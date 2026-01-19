@@ -6,8 +6,8 @@ from zope.component import getUtility
 
 
 WSC_SCRIPTS_TEMPLATE = """
-<script type="application/javascript" src="{plonesite}/wscinit.js?t={timestamp}"></script>
-<script type="application/javascript" crossorigin="anonymous" src="{bundle}?t={timestamp}"></script>
+<script type="application/javascript" src="{plonesite}/wscinit.js?t={timestamp}" defer></script>
+<script type="application/javascript" crossorigin="anonymous" src="{bundle}?t={timestamp}" defer></script>
 """
 
 

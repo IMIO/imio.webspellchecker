@@ -1,22 +1,19 @@
 # Changelog
 
 
-1.2 (unreleased)
-----------------
+## 1.2 (unreleased)
 
-- Nothing changed yet.
+- Use defer `<script>`'s attribute so it doesn't block the whole page in case the service isn't responding.
+  [aduchene]
 
-
-1.1 (2025-07-11)
-----------------
+## 1.1 (2025-07-11)
 
 - Fixed installation by renaming the `base` profile to `install-base` so it is
   no more alphabetically before `default`.
   Removed `metadata.xml` from the `install-base` profile.
   [gbastien, aduchene]
 
-1.0 (2025-05-27)
-----------------
+## 1.0 (2025-05-27)
 
 - Add new settings to manage webspellchecker.
   [aduchene]

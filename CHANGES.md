@@ -1,6 +1,12 @@
 # Changelog
 
 
+## 1.3 (unreleased)
+
+
+- Nothing changed yet.
+
+
 ## 1.2 (2026-01-19)
 
 - Use defer `<script>`'s attribute so it doesn't block the whole page in case the service isn't responding.
